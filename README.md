@@ -1,6 +1,6 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/mohitjaisal/VXPlayer/master/favicon.png" alt="VX Player Logo" width="10%" height="auto" />
-  <h1>VX Player</h1>
+  <img src="assets/VXPlayer-Header.png" alt="VX Player Logo" width="100%" height="auto" />
+<br/>
   <p>
     A modern web player developed using only JavaScript, CSS and HTML
   </p>
@@ -25,7 +25,7 @@ VX Player is a fully custom media player made with JavaScript and basic HTML, CS
 
 ## :rocket: Demo
 If you want to see the project in action you can take a look at the demo [here](https://vxplayer.netlify.app/).
-![Demo](https://raw.githubusercontent.com/mohitjaisal/VXPlayer/master/demovxplayer.png)
+![Demo](assets/demovxplayer.png)
 
 Otherwise you can clone the repo locally on your machine and then open the `index.html` inside your browser.
 ```shell
