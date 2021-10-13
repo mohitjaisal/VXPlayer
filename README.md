@@ -25,7 +25,8 @@ VX Player is a fully custom media player made with JavaScript and basic HTML, CS
 
 ## :rocket: Demo
 If you want to see the project in action you can take a look at the demo [here](https://vxplayer.netlify.app/).
-![Demo](assets/demovxplayer.png)
+
+![image](https://user-images.githubusercontent.com/68009648/137155560-590e41fe-8d6e-45fe-a0bd-9c1fd9c9c17e.png)
 
 Otherwise you can clone the repo locally on your machine and then open the `index.html` inside your browser.
 ```shell
