@@ -14,14 +14,14 @@ const fullscreenBtn = document.querySelector('.fullscreen');
 // Play & Pause ----------------------------------- //
 
 function showPlayIcon() {
-  playBtn.classList.replace('fa-pause', 'fa-play');
+  playBtn.classList.replace('fa-pause-circle', 'fa-play-circle');
   playBtn.setAttribute('title', 'Play');
 }
 
 function togglePlay() {
   if (video.paused) {
     video.play();
-    playBtn.classList.replace('fa-play', 'fa-pause');
+    playBtn.classList.replace('fa-play-circle', 'fa-pause-circle');
     playBtn.setAttribute('title', 'Pause');
   } else {
     video.pause();
