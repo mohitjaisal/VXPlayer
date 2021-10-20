@@ -239,6 +239,8 @@ select > option {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+  max-height: none!important; 
+  min-height: none;
 }
 
 /* Media Query: Large Smartphone (Vertical) */
