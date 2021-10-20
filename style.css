@@ -179,6 +179,43 @@ video {
   background: var(--primary-color);
 }
 
+.tenSeconds {
+  cursor: pointer;
+  display: flex;
+  margin-top: 8px;
+
+}
+.backward{
+  margin-left: 75px;
+}
+.forward{
+  margin-left: 10px;
+}
+.fa-redo-alt{
+  font-size: 20px;
+}
+.fa-undo-alt{
+  font-size: 20px;
+}
+@keyframes forwardtenmove {
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(10deg);}
+  100% {transform: rotate(0deg);}
+}
+@keyframes backwardtenmove {
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(-10deg);}
+  100% {transform: rotate(0deg);}
+}
+.anim{
+ animation: forwardtenmove .5s linear;
+ transform-origin: right ;
+}
+.anime{
+  animation: backwardtenmove .5s linear;
+ transform-origin: left ;
+
+}
 /* Right Controls ---------------------------- */
 .controls-right {
   justify-content: flex-end;

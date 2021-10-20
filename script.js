@@ -10,6 +10,11 @@ const speed = document.querySelector('.player-speed');
 const currentTime = document.querySelector('.time-elapsed');
 const duration = document.querySelector('.time-duration');
 const fullscreenBtn = document.querySelector('.fullscreen');
+const forwardTen = document.querySelector('.forward');
+const backwardTen = document.querySelector('.backward');
+const forwardIcon = document.querySelector('.fas-redo-alt');
+const backwardIcon = document.querySelector('.fas-undo-alt');
+
 
 // Play & Pause ----------------------------------- //
 
@@ -155,6 +160,39 @@ function toggleFullscreen() {
   fullscreen = !fullscreen;
 }
 
+//skip ahead or Rewind back 10 seconds
+function forwardTenSeconds(e) {
+  e.preventDefault();
+  progressBar.style.width = `${(video.currentTime / video.duration) * 100}%`;
+//  progressBar.style.width = `${myNewTime * 100}%`;
+  const vid = video.currentTime;
+  video.currentTime = vid + 10;
+  //setting up rotating animation
+  forwardTen.classList.add("anim");
+  forwardTen.addEventListener('animationend',() =>{
+    forwardTen.classList.remove('anim');
+
+  });
+  
+
+  
+
+
+}
+function backwardTenSeconds(e) {
+  e.preventDefault();
+  progressBar.style.width = `${(video.currentTime / video.duration) * 100}%`;
+  const vidi = video.currentTime;
+  video.currentTime = vidi - 10;
+  //setting up rotating animation
+  backwardTen.classList.add("anime");
+  backwardTen.addEventListener('animationend',() =>{
+    backwardTen.classList.remove('anime');
+
+  });
+
+}
+
 // Event Listeners
 playBtn.addEventListener('click', togglePlay);
 video.addEventListener('click', togglePlay);
@@ -165,3 +203,6 @@ volumeRange.addEventListener('click', changeVolume);
 volumeIcon.addEventListener('click', toggleMute);
 speed.addEventListener('change', changeSpeed);
 fullscreenBtn.addEventListener('click', toggleFullscreen);
+forwardTen.addEventListener('click',forwardTenSeconds);
+backwardTen.addEventListener('click',backwardTenSeconds);
+
