@@ -206,3 +206,14 @@ fullscreenBtn.addEventListener('click', toggleFullscreen);
 forwardTen.addEventListener('click',forwardTenSeconds);
 backwardTen.addEventListener('click',backwardTenSeconds);
 
+
+// pause/play toggle through space key and Full Screen Toggle through F key
+
+document.addEventListener('keyup',(ev)=>{
+  var keyname=ev.key;
+  var keycode =ev.code;
+  if(keyname=='f'||keyname=='F')
+    toggleFullscreen();
+  else if(keycode=='Space')
+    togglePlay();
+})
