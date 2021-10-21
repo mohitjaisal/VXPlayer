@@ -14,7 +14,8 @@ const forwardTen = document.querySelector('.forward');
 const backwardTen = document.querySelector('.backward');
 const forwardIcon = document.querySelector('.fas-redo-alt');
 const backwardIcon = document.querySelector('.fas-undo-alt');
-
+const forwardTenPressed = document.querySelector('.forward');
+const backwardTenPressed = document.querySelector('.backward');
 
 // Play & Pause ----------------------------------- //
 
@@ -175,9 +176,6 @@ function forwardTenSeconds(e) {
   });
   
 
-  
-
-
 }
 function backwardTenSeconds(e) {
   e.preventDefault();
@@ -193,6 +191,13 @@ function backwardTenSeconds(e) {
 
 }
 
+function keyBoardHandler(event) {
+  if (event.keyCode == 37)
+    backwardTenSeconds(event);
+  else if (event.keyCode == 39)
+    forwardTenSeconds(event);
+}
+
 // Event Listeners
 playBtn.addEventListener('click', togglePlay);
 video.addEventListener('click', togglePlay);
@@ -205,4 +210,5 @@ speed.addEventListener('change', changeSpeed);
 fullscreenBtn.addEventListener('click', toggleFullscreen);
 forwardTen.addEventListener('click',forwardTenSeconds);
 backwardTen.addEventListener('click',backwardTenSeconds);
+window.addEventListener('keydown',keyBoardHandler);
 
