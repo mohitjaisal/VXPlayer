@@ -191,11 +191,14 @@ function backwardTenSeconds(e) {
 
 }
 
-function keyBoardHandler(event) {
-  if (event.keyCode == 37)
-    backwardTenSeconds(event);
-  else if (event.keyCode == 39)
-    forwardTenSeconds(event);
+function arrowBackwardTenSeconds(e) {
+  if (e.keyCode == 37)
+    backwardTenSeconds(e);
+}
+
+function arrowForwardTenSeconds(e) {
+  if (e.keyCode == 39)
+    forwardTenSeconds(e);
 }
 
 // Event Listeners
@@ -210,5 +213,6 @@ speed.addEventListener('change', changeSpeed);
 fullscreenBtn.addEventListener('click', toggleFullscreen);
 forwardTen.addEventListener('click',forwardTenSeconds);
 backwardTen.addEventListener('click',backwardTenSeconds);
-window.addEventListener('keydown',keyBoardHandler);
+window.addEventListener('keydown',arrowBackwardTenSeconds);
+window.addEventListener('keydown',arrowForwardTenSeconds);
 
