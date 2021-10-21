@@ -14,7 +14,8 @@ const forwardTen = document.querySelector('.forward');
 const backwardTen = document.querySelector('.backward');
 const forwardIcon = document.querySelector('.fas-redo-alt');
 const backwardIcon = document.querySelector('.fas-undo-alt');
-
+const forwardTenPressed = document.querySelector('.forward');
+const backwardTenPressed = document.querySelector('.backward');
 
 // Play & Pause ----------------------------------- //
 
@@ -175,9 +176,6 @@ function forwardTenSeconds(e) {
   });
   
 
-  
-
-
 }
 function backwardTenSeconds(e) {
   e.preventDefault();
@@ -193,6 +191,24 @@ function backwardTenSeconds(e) {
 
 }
 
+//pressed right array key to skip 10 seconds ahead
+function arrowBackwardTenSeconds(e) {
+  if (e.keyCode == 37)
+    backwardTenSeconds(e);
+}
+
+//pressed left array key to skip 10 seconds backward
+function arrowForwardTenSeconds(e) {
+  if (e.keyCode == 39)
+    forwardTenSeconds(e);
+}
+
+//pressed space bar to pause and play the video 
+function spacebarTogglePlay(e){
+  if (e.keyCode == 32)
+    togglePlay();
+}
+
 // Event Listeners
 playBtn.addEventListener('click', togglePlay);
 video.addEventListener('click', togglePlay);
@@ -205,6 +221,9 @@ speed.addEventListener('change', changeSpeed);
 fullscreenBtn.addEventListener('click', toggleFullscreen);
 forwardTen.addEventListener('click',forwardTenSeconds);
 backwardTen.addEventListener('click',backwardTenSeconds);
+window.addEventListener('keydown',arrowBackwardTenSeconds);
+window.addEventListener('keydown',arrowForwardTenSeconds);
+window.addEventListener('keydown',spacebarTogglePlay);
 
 
 // pause/play toggle through space key and Full Screen Toggle through F key
